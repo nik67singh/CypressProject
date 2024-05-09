@@ -1,0 +1,10 @@
+class SearchPage{
+    search(){
+         cy.get('input[placeholder="Search Amazon.in"]').type('iphone')
+         cy.get('#nav-search-submit-button').click()
+         cy.wait(2000)
+         cy.get('span.a-size-medium-plus.a-color-base.a-text-bold').contains('Results').should('exist')
+    }
+}
+
+export default new SearchPage();
